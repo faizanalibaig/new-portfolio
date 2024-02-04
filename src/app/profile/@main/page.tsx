@@ -15,7 +15,7 @@ function Main() {
         <div className='w-[25%] border-b-2 border-black/30 hidden sm:hidden md:block md:h-72 xl:h-80' />
   
         <div className='w-full md:w-[70%] flex md:items-end'>
-          <p className='text-sm sm:text-lg md:text-xs lg:text-sm xl:text-lg'>
+          <p className='text-base sm:text-lg md:text-xs lg:text-sm xl:text-lg'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora expedita culpa veniam fugit dolores laboriosam repudiandae sed adipisci ipsum quaerat consectetur eligendi inventore suscipit nostrum pariatur libero, officia sit non architecto molestias ea voluptatum tenetur? Facilis deserunt vero pariatur quas, quisquam minima totam eos tempore blanditiis, asperiores dolores dolor ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae ipsum atque vitae doloremque? Cumque adipisci qui ratione ex consequatur voluptate aspernatur omnis facilis placeat labore voluptatem, aliquid temporibus nostrum ducimus! Doloremque fugit doloribus inventore, ullam quod necessitatibus asperiores deleniti. Corporis?
           </p>
         </div>

@@ -5,7 +5,7 @@ function Main() {
     <main className='mt-[124px] px-10'>
     <div className='md:h-[450px] xl:h-[550px] md:px-5 xl:px-20 py-10 flex flex-col gap-4 md:flex-row'>
       <div className='w-full md:w-2/6 lg:h-2/5 xl:2/5 py-4'>
-        <h1 className='text-6xl md:text-[55px] lg:text-7xl xl:text-8xl font-bold flex flex-col'>
+        <h1 className='text-7xl md:text-[55px] lg:text-7xl xl:text-8xl font-bold flex flex-col'>
         <span>{`hey, I'm`}</span>
         <span>faizan</span>
         </h1>

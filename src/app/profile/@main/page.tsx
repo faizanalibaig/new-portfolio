@@ -14,8 +14,7 @@ function Main() {
 
 export default Main
 
-
-export function MainInfo(){
+ function MainInfo(){
  return(
      <>
            <section className='w-screen flex justify-around md:h-[550px] lg:flex-row lg:h-[400px] xl:h-[500px]'>

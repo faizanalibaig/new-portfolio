@@ -1,13 +1,18 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import {ProjectData} from "@/dbData/ProjectsData"
+
+
 import ImageMan from '@/assets/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg'
 
 function Main() {
   return (
-    <main className='mt-[124px] w-screen h-auto pt-10 lg:py-6 xl:py-10'>
+    <main className='mt-[124px] w-screen h-auto flex flex-col gap-28'>
       <MainInfo/>
-    </main>
+      <Caursols/>
+    </main> 
   
   )
 }
@@ -16,7 +21,7 @@ export default Main
 
  function MainInfo(){
  return(
-     <>
+     <div className='pt-10 lg:py-6 xl:py-10'>
            <section className='w-screen flex justify-around md:h-[550px] lg:flex-row lg:h-[400px] xl:h-[500px]'>
         {/* Image */}
         <div className='hidden lg:block lg:w-[380px] xl:w-[600px] h-full '>
@@ -51,7 +56,28 @@ export default Main
            </div>
         </section>
       </section>
-     </>
+     </div>
  )
 }
 
+
+function Caursols(){
+  return(
+    <div className='w-full h-auto pl-6 sm:pl-10 md:pl-12 lg:pl-12 lg:pr-10 pt-14 sm:pt-28 md:pt-32 lg:pt-40 pb-20'>
+       <div className='max-h-[470px] w-auto overflow-x-auto flex gap-[60px] sm:gap-[80px] lg:gap-[110px]
+       xl:gap-[120px] scrollbar-hide'>
+         
+          {
+            ProjectData.map((value, index)=>(
+              <div key={index} className='h-[320px] min-w-[210px] sm:h-[320px] sm:min-w-[250px] md:h-[340px] md:min-w-[260px] lg:h-[360px] lg:min-w-[250px] xl:h-[420px] xl:min-w-[320px] bg-blue-600 relative'>
+                <h1 className='absolute top-24 right-[-75px] sm:top-28 sm:right-[-75px] lg:top-32 lg:right-[-78px] xl:top-36 xl:right-[-80px] text-2xl sm:text-2xl lg:text-3xl xl:text-3xl w-44 h-auto font-bold'>{value.Title}</h1>
+                <h1 className='absolute right-[-25px] top-5 sm:right-[-25px] sm:top-5 lg:right-[-30px] lg:top-5 font-medium text-lg sm:text-lg lg:text-xl xl:text-2xl'>{value.Number}</h1>
+                <Link  href="" className='absolute right-[-12px] top-56 sm:right-[-14px] sm:top-64 lg:right-[-16px] lg:top-72 xl:right-[-20px] xl:top-80 text-lg sm:text-xl border-b-2 border-black'>{value.Github}</Link>
+              </div>
+            ))
+          }
+          
+       </div>
+    </div>
+  )
+}

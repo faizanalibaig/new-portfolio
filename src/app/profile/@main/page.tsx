@@ -227,7 +227,7 @@ function TechnicalExpertise(){
 
 function Footer(){
   return(
-    <footer className='w-full h-auto border-t-2 border-black/20 pt-10 pb-5 px-8 sm:px-16 sm:py-10 md:px-20 md:py-12  lg:py-20 lg:px-28 xl:px-32  flex flex-col
+    <footer className='w-full h-auto border-t-2 border-black/20 pt-14 pb-8 px-8 sm:px-16 sm:py-10 md:px-20 md:py-12  lg:py-20 lg:px-28 xl:px-32  flex flex-col
     gap-10 sm:flex-row sm:gap-0 justify-between '>
        <section className='sm:w-[50%] lg:w-[45%] xl:w-[30%] h-full  flex flex-col gap-10 '>
       <div className='flex flex-col gap-1 sm:gap-2'>

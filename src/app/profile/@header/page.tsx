@@ -13,7 +13,7 @@ function Header() {
             </h1>
             <VscThreeBars className='block sm:hidden text-[28px] cursor-pointer'/>
             
-           <button className='hidden sm:block bg-black sm:h-[38px] sm:w-[92px] sm:text-[16px] xl:h-[44px] xl:w-[104px] text-white xl:text-[18px] rounded-[6px] 
+           <button className='hidden sm:block bg-black h-[44px] w-[104px] text-white text-[18px] rounded-[6px] 
            hover:rounded-[20px] transition-all font-medium'>
             resume</button> 
         </section>

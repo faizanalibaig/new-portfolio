@@ -4,8 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-
-
 import TechnicalExpertise from '@/components/maincomponents/TechnicalExpertise';
 import Caursols from '@/components/maincomponents/Caursols';
 

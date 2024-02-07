@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { ProjectData } from "@/dbData/ProjectsData";
 import { InDepthDetail } from "@/dbData/InDepthDetail";
+
+
 import Link from "next/link";
 
 interface ProjectItem {
@@ -41,11 +43,12 @@ export default function Caursols() {
   return (
     <div className="w-full h-full lg:pr-10 pt-14 sm:pt-28 md:pt-32 lg:pt-40 pb-20">
    {card ? ( <ViewMore indexNumber={index} handleCarded={handleCarded} />) : 
-     ( <div className="pl-6 sm:pl-10 md:pl-12 lg:pl-12 max-h-[470px] w-auto overflow-x-auto flex gap-[60px] sm:gap-[80px] lg:gap-[110px] xl:gap-[120px] scrollbar-hide ">
+     ( <div className=" pl-6 sm:pl-10 md:pl-12 lg:pl-12 max-h-[470px] w-auto overflow-x-auto flex gap-[60px] sm:gap-[80px] lg:gap-[110px]  xl:gap-[120px] scrollbar-hide ">
         {ProjectData.map((project: ProjectItem, projectIndex: number) => (
           <div
+            id={`element${project.key}`}
             key={projectIndex}
-            className={`h-[360px] min-w-[210px] sm:h-[360px] sm:min-w-[250px] md:h-[360px] md:min-w-[260px] lg:h-[360px] lg:min-w-[250px] xl:h-[420px] xl:min-w-[320px] bg-blue-600 relative`}
+            className=' h-[360px] min-w-[210px] sm:h-[360px] sm:min-w-[250px] md:h-[360px] md:min-w-[260px] lg:h-[360px] lg:min-w-[250px] xl:h-[420px] xl:min-w-[320px] bg-blue-600 relative'
           >
             <h1 className="absolute top-24 right-[-75px] sm:top-28 sm:right-[-75px] lg:top-32 lg:right-[-78px] xl:top-36 xl:right-[-80px] text-2xl sm:text-2xl lg:text-3xl xl:text-3xl w-44 h-auto font-bold">
               {project.Title}

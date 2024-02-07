@@ -30,7 +30,7 @@ export default Main
 
 
  return(
-     <div className='pt-2 sm:pt-10 lg:py-6 xl:py-5'>
+     <div className='sm:pt-10 lg:py-6 xl:py-5'>
            <section className='w-screen flex justify-center md:h-auto lg:flex-row lg:h-[400px] xl:h-[500px]'>
         {/* Image */}
         <div className='hidden lg:block lg:w-[450px] xl:w-[650px] h-full '>

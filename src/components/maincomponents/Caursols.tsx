@@ -79,7 +79,7 @@ export default function Caursols() {
   return (
     <div className="w-full h-full lg:pr-10 pt-14 sm:pt-28 md:pt-32 lg:pt-40 pb-20">
    {card ? ( <ViewMore indexNumber={index} handleCarded={handleCarded} />) : 
-     ( <div className=" pl-6 sm:pl-10 md:pl-12 lg:pl-12 max-h-[470px] w-auto overflow-x-auto flex gap-[60px] sm:gap-[80px] lg:gap-[110px]  xl:gap-[120px] scrollbar-hide ">
+     ( <div className="pl-6 sm:pl-10 md:pl-12 lg:pl-12 max-h-[470px] w-auto overflow-x-auto flex gap-[70px] sm:gap-[80px] lg:gap-[110px]  xl:gap-[120px] scrollbar-hide ">
         {ProjectData.map((project: ProjectItem, projectIndex: number) => (
           <div
             ref={element => { if (element) elementRefs.current[projectIndex] = element; }}

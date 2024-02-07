@@ -14,7 +14,7 @@ function Main() {
 
 
   return (
-    <div className='mt-[105px] sm:mt-[124px] w-screen h-auto flex flex-col gap-28'>
+    <div className='mt-[102px] sm:mt-[124px] w-screen h-auto flex flex-col gap-28'>
       <MainInfo/>
        <Caursols/> 
       <TechnicalExpertise/>

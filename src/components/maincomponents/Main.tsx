@@ -12,10 +12,9 @@ import ImageOther from "@/assets/WhatsApp Image 2024-02-07 at 1.30.19 PM.jpeg"
 
 function Main() {
 
-//  0 bottom of view screen, 1 start of new view screen,  first part about when start and second when end
 
   return (
-    <div className='mt-[124px] w-screen h-auto flex flex-col gap-28'>
+    <div className='mt-[115px] sm:mt-[124px] w-screen h-auto flex flex-col gap-28'>
       <MainInfo/>
        <Caursols/> 
       <TechnicalExpertise/>

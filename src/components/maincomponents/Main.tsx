@@ -2,7 +2,6 @@
 import React, { Suspense } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Loading from './loading'
 
 
 import TechnicalExpertise from '@/components/maincomponents/TechnicalExpertise';
@@ -18,7 +17,7 @@ function Main() {
   return (
     <div className='mt-[124px] w-screen h-auto flex flex-col gap-28'>
       <MainInfo/>
-      <Suspense fallback={Loading()}> <Caursols/> </Suspense>
+       <Caursols/> 
       <TechnicalExpertise/>
     </div> 
   

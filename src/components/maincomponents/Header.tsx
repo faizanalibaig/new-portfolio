@@ -45,7 +45,7 @@ function Header() {
 function NavWorking({ closeNav }: { closeNav: () => void }) {
 
   return (
-    <div className='w-full h-screen bg-black/80'>
+    <div className='w-full h-screen bg-black/80 animate-wiggle'>
       <section className='sm:hidden w-full h-[200px] bg-white z-10 absolute top-0 border-b-2 border-black/10'>
         <div className='bg-white w-full h-[80%] border-b-2 border-black/10 flex
           flex-col justify-between px-5 py-5'>
@@ -58,7 +58,9 @@ function NavWorking({ closeNav }: { closeNav: () => void }) {
               </span>
             </h1>
             <button className=' sm:hidden underline text-black text-[20px] 
-              hover:rounded-[20px] transition-all font-medium'>resume</button>
+              hover:rounded-[20px] transition-all font-medium'>
+                <Link href={ResumeLink.src} target='_blank' download={ResumeLink.src}>resume</Link>
+              </button>
           </section>
         </div>
       </section>

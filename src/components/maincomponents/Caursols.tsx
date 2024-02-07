@@ -1,11 +1,7 @@
-'use client'
-
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { IoMdClose } from "react-icons/io";
 import { ProjectData } from "@/dbData/ProjectsData";
 import { InDepthDetail } from "@/dbData/InDepthDetail";
-
-
 import Link from "next/link";
 
 interface ProjectItem {
@@ -15,6 +11,7 @@ interface ProjectItem {
   link: string;
   Github: string;
 }
+
 interface ProjectDetail {
   key: number;
   Number: string;
@@ -24,21 +21,60 @@ interface ProjectDetail {
   link: string;
 }
 
-
 export default function Caursols() {
   const [index, setIndex] = useState<number>(0);
-  const [card, setCard]=useState(false)
+  const [card, setCard]=useState(false);
+  const [elementsVisible, setElementsVisible] = useState<number[]>([]);
 
   const handleCard=(()=>{
     setCard(true)
-  })
+  });
 
   const handleProjectClick = (key: number) => {
     setIndex(key);
   };
+
   const handleCarded = () => {
     setCard(false);
   };
+
+  const elementRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const options = {
+      root: null, // use the viewport as the root
+      rootMargin: '0px', // no margin
+      threshold: 0.5 // trigger when 50% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          const id = element.id;
+          const projectKey = parseInt(id.replace('element', ''));
+          if (!elementsVisible.includes(projectKey)) {
+            setElementsVisible(prev => [...prev, projectKey]);
+          }
+          observer.unobserve(element);
+        }
+      });
+    }, options);
+
+    elementRefs.current.forEach((element) => {
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      elementRefs.current.forEach((element) => {
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, []);
 
   return (
     <div className="w-full h-full lg:pr-10 pt-14 sm:pt-28 md:pt-32 lg:pt-40 pb-20">
@@ -46,9 +82,9 @@ export default function Caursols() {
      ( <div className=" pl-6 sm:pl-10 md:pl-12 lg:pl-12 max-h-[470px] w-auto overflow-x-auto flex gap-[60px] sm:gap-[80px] lg:gap-[110px]  xl:gap-[120px] scrollbar-hide ">
         {ProjectData.map((project: ProjectItem, projectIndex: number) => (
           <div
-            id={`element${project.key}`}
+            ref={element => { if (element) elementRefs.current[projectIndex] = element; }}
             key={projectIndex}
-            className=' h-[360px] min-w-[210px] sm:h-[360px] sm:min-w-[250px] md:h-[360px] md:min-w-[260px] lg:h-[360px] lg:min-w-[250px] xl:h-[420px] xl:min-w-[320px] bg-blue-600 relative'
+            className={`bg-[url("../assets/brandi-redd-aJTiW00qqtI-unsplash.jpg")]  h-[360px] min-w-[210px] sm:h-[360px] sm:min-w-[250px] md:h-[360px] md:min-w-[260px] lg:h-[360px] lg:min-w-[250px] xl:h-[420px] xl:min-w-[320px] bg-black/40 relative animate-wiggle ${elementsVisible.includes(project.key) ? 'lazy-loaded' : ''}`}
           >
             <h1 className="absolute top-24 right-[-75px] sm:top-28 sm:right-[-75px] lg:top-32 lg:right-[-78px] xl:top-36 xl:right-[-80px] text-2xl sm:text-2xl lg:text-3xl xl:text-3xl w-44 h-auto font-bold">
               {project.Title}
@@ -61,7 +97,8 @@ export default function Caursols() {
               onClick={() => {
                 handleProjectClick(project.key);
                 handleCard();
-              }}            >
+              }}
+            >
               {project.Github}
             </button>
           </div>
@@ -96,7 +133,7 @@ function ViewMore({ indexNumber, handleCarded }: ViewMoreProps) {
   }, [indexNumber]); 
 
   return (
-    <div className="w-screen h-[500px] px-12 sm:px-16 lg:px-32">
+    <div className="w-screen h-[500px] px-12 sm:px-16 lg:px-32 animate-wiggle">
       {projectDetails && (
         <section className="w-full h-full flex flex-col lg:flex-row">
           <div className="w-full lg:w-[40%] xl:w-[33%] h-full flex flex-col pb-5">
@@ -132,4 +169,3 @@ function ViewMore({ indexNumber, handleCarded }: ViewMoreProps) {
     </div>
   );
 }
-

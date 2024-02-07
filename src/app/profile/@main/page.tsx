@@ -1,7 +1,8 @@
 'use client'
-import React from 'react'
+import React, { Suspense } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Loading from './loading'
 
 
 import TechnicalExpertise from '@/components/maincomponents/TechnicalExpertise';
@@ -17,7 +18,7 @@ function Main() {
   return (
     <div className='mt-[124px] w-screen h-auto flex flex-col gap-28'>
       <MainInfo/>
-      <Caursols/>
+      <Suspense fallback={Loading()}> <Caursols/> </Suspense>
       <TechnicalExpertise/>
     </div> 
   
@@ -61,8 +62,8 @@ export default Main
                 </p>
                 </div>
                 <div className='sm:grow flex gap-4 py-6 md:py-0 md:items-end'>
-                <Link href='' className='border-b-2 border-black  text-lg sm:text-2xl lg:text-xl xl:text-xl '>email</Link>
-                <Link href=''  className='border-b-2 border-black text-lg sm:text-2xl lg:text-xl xl:text-xl '>github</Link>
+                <Link href='mailto:riazfiaz6181@gmail.com' className='border-b-2 border-black  text-lg sm:text-2xl lg:text-xl xl:text-xl '>email</Link>
+                <Link href='https://github.com/faizanalibaig' target='_blank' className='border-b-2 border-black text-lg sm:text-2xl lg:text-xl xl:text-xl '>github</Link>
                 </div>
             </section>
            </div>

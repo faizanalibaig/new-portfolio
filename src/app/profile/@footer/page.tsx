@@ -30,9 +30,9 @@ export default function Footer(){
          </section>
          <section className='sm:w-[35%] md:w-[30%] h-auto flex flex-col sm:items-end sm:justify-between'>
             <div className='pl-2 h-8  flex justify-center items-center sm:justify-end gap-5 sm:border-l-2 sm:border-black/40 '>
-             <Link href=''><AiFillInstagram className='text-[22px] sm:text-[24px] md:text-[26px] xl:text-[28px]'/></Link>  
-              <Link href=''><FaGithub className='text-[18px] sm:text-[20px] md:text-[22px] xl:text-2xl'/></Link> 
-              <Link href=''> <IoLogoLinkedin className='text-[20px] sm:text-[22px] md:text-[24px] xl:text-[26px]'/></Link>
+             <Link href='https://www.instagram.com/thefaizanalibaig/' target="_blank"><AiFillInstagram className='text-[22px] sm:text-[24px] md:text-[26px] xl:text-[28px]'/></Link>  
+              <Link href='https://github.com/faizanalibaig' target="_blank"><FaGithub className='text-[18px] sm:text-[20px] md:text-[22px] xl:text-2xl'/></Link> 
+              <Link href='https://www.linkedin.com/in/faizan-ali-a871ab265?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' target="_blank"> <IoLogoLinkedin className='text-[20px] sm:text-[22px] md:text-[24px] xl:text-[26px]'/></Link>
             </div>
             <div>
               <p className='text-xs sm:text-sm xl:text-base text-center sm:text-right'>All rights reserved © 2024</p>

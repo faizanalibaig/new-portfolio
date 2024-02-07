@@ -26,7 +26,8 @@ export const InDepthDetail=[
         Number:"Project-04",
         Title:"Signup & Login Project",
         description:"The Signup Login Authentication Project is a web application developed using Next.js, Tailwind CSS, and MongoDB. It provides complete authentication functionality, allowing users to sign up for an account and log in securely. The project integrates with MongoDB to store user credentials securely. With working features for signup and login, users can create accounts, authenticate themselves, and access protected areas of the application. This project serves as a robust example of user authentication implementation in a modern web development stack.",
-        link:"https://github.com/faizanalibaig/signup-login-nextjs"
+        link:"https://github.com/faizanalibaig/signup-login-nextjs",
+        visit:"view more",
     }, {
         key:5,
         Number:"Project-05",

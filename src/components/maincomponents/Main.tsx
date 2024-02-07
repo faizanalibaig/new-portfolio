@@ -34,8 +34,9 @@ export default Main
            <section className='w-screen flex justify-center md:h-auto lg:flex-row lg:h-[400px] xl:h-[500px]'>
         {/* Image */}
         <div className='hidden lg:block lg:w-[450px] xl:w-[650px] h-full '>
-          <Image src={ImageMan} alt='profile pic' className='h-full w-auto'/>
-        </div>
+        <Image src={ImageMan} alt='profile pic' className='h-full w-auto bg-black/30' loading="lazy"/>
+       </div>
+
         {/* Information */}
         <section className='w-[80%] lg:w-[380px] xl:w-[560px] h-auto lg:h-full  flex gap-3 md:gap-4 flex-col'>
           <div>
